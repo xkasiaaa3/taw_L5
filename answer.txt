@@ -1,0 +1,3 @@
+Komunikat został wyświetlony dzięki funkcji obsługi zdarzeń. Przy zdarzeniu 'connection' (połączenie z serwerem) wykona się console.log('new connection'):
+
+server.on('connection', (socket => {console.log('new connection');}))
