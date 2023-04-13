@@ -72,6 +72,12 @@ const dataEndpoint = (router) => {
   router.get("/api/posts", async (request, response, next) => {
     response.status(200).send({ posts: posts });
   });
+
+  router.post("/api/posts", async (request, response, next) => {
+    posts.push(request.body.newPost);
+
+    response.status(200).send({ post: posts[posts.length - 1] });
+  });
 };
 
 export default dataEndpoint;
