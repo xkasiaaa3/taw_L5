@@ -78,6 +78,19 @@ const dataEndpoint = (router) => {
 
     response.status(200).send({ post: posts[posts.length - 1] });
   });
+
+  router.get("/api/post/:id", async (request, response, next) => {
+    console.log(request.params.id);
+
+    posts.forEach((value) =>
+      value.id == request.params.id
+        ? response.status(200).send({ post: value })
+        : null
+    );
+
+    console.log("nie ten");
+    // response.status(200).send({ post: posts[3] });
+  });
 };
 
 export default dataEndpoint;
