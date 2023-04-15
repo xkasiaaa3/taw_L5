@@ -87,9 +87,22 @@ const dataEndpoint = (router) => {
         ? response.status(200).send({ post: value })
         : null
     );
+  });
 
-    console.log("nie ten");
-    // response.status(200).send({ post: posts[3] });
+  router.put("/api/post/:id", async (request, response, next) => {
+    let indexOfPost = posts.findIndex((value) => value.id == request.params.id);
+
+    if (request.body.updatePost.title != null) {
+      posts[indexOfPost].title = request.body.updatePost.title;
+    }
+    if (request.body.updatePost.text != null) {
+      posts[indexOfPost].text = request.body.updatePost.text;
+    }
+    if (request.body.updatePost.image != null) {
+      posts[indexOfPost].image = request.body.updatePost.image;
+    }
+
+    response.status(200).send({ post: posts[indexOfPost] });
   });
 };
 
