@@ -19,5 +19,19 @@ const postEndpoint = (router) => {
         }
     });
 
+    router.get('/api/posts/:id', async (request, response, next) => {
+        try {
+            let postId = request.params.id;
+            let result = await business.getPostManager().get(postId);
+            if (result) {
+                response.status(200).send(result);
+            } else {
+                response.status(404).send('Post not found');
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
 };
 export default postEndpoint;
