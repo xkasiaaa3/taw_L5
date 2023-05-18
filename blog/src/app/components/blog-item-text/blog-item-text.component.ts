@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'blog-item-text',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-item-text.component.css']
 })
 export class BlogItemTextComponent {
+
+  @Input() text?: string;
 
 }
