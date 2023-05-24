@@ -17,6 +17,7 @@ import { BlogHomeComponent } from './components/blog-home/blog-home.component';
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
 import { HomeComponent } from './components/home/home.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
