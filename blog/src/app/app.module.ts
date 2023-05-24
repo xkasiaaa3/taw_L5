@@ -19,6 +19,9 @@ import { TextFormatDirective } from './directives/text-format.directive';
 import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './services/auth/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { AuthInterceptor } from './services/auth/auth.interceptor';
     BlogHomeComponent,
     FilterTextPipe,
     TextFormatDirective,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

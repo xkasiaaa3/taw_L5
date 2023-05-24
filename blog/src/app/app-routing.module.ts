@@ -5,9 +5,12 @@ import { BlogItemDetailsComponent } from './components/blog-item-details/blog-it
 import { BlogHomeComponent } from './components/blog-home/blog-home.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './services/auth.guard';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
- 
+ {path: 'signup',
+component:SignupComponent},
   {
     path: '',
     component: HomeComponent
@@ -17,8 +20,12 @@ const routes: Routes = [
       component: BlogHomeComponent,
       canActivate:[AuthGuard]
       },
+      {
+        path: 'login',
+        component: LoginComponent
+      }
     
-  
+  ,
   {
     path: 'blog/detail/:id',
     component: BlogItemDetailsComponent
